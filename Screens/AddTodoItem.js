@@ -13,26 +13,18 @@ const AddTodoItem = ({ navigation, props }) => {
     const [context, setContext] = useContext(Context);
     const [todocontext, setTodoContext] = useContext(TodoContext);
 
-    const [value, setValue] = useState({
-        title: '',
-        assignee: '',
-        dueDate: ''
-    })
+    const [value, setValue] = useState([]);
 
     const onPress = () => {
-        setValue({
-            title: '',
-            assignee: '',
-            dueDate: ''
-        })
         dispatchUserEvent("todoItem",value);
         navigation.navigate("HomePage");
     }
 
     const dispatchUserEvent = (actionType, payload) => {
+        console.log("PayLoad..", payload);
         switch (actionType) {
             case 'todoItem':
-                setTodoContext(payload);
+                setTodoContext([payload]);
                 return;
             default:
                 return;
