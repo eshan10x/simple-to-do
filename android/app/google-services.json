@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "183012769126",
+    "project_id": "simple-to-do-app-9ef38",
+    "storage_bucket": "simple-to-do-app-9ef38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183012769126:android:5b53873873aab8c6725ca7",
+        "android_client_info": {
+          "package_name": "com.simpletodoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183012769126-8ngstlh8ontm5lc5a86hs1r60dm2rmkr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simpletodoapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "183012769126-p49ocuh0jlavlri58he356dbpfet7gdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtOFOZYBmbGrY3tPCYbbEMmeH8ipzfkj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183012769126-p49ocuh0jlavlri58he356dbpfet7gdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
