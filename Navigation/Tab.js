@@ -6,7 +6,6 @@ import {
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomePage from "../Screens/HomePage";
-import AddTodoItem from '../Screens/AddTodoItem';
 import LogIn from "../Screens/LogIn";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DoneScreen from "../Screens/DoneScreen";
@@ -52,14 +51,14 @@ const Tabs = ({ navigation }) => {
                 }}
             />
 
-            <Tab.Screen
+            {/* <Tab.Screen
                 name="AddTodoItem"
                 component={AddTodoItem}
                 options={{
                     tabBarLabel: 'AddToDo',
 
                 }}
-            />
+            /> */}
 
             <Tab.Screen
                 name="LogIn"

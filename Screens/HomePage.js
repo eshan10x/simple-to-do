@@ -1,13 +1,12 @@
-import { NavigationHelpersContext } from '@react-navigation/core';
 import React, { useContext, useState, useEffect } from 'react';
 import { SafeAreaView, Text, View, StyleSheet, TextInput, Button, FlatList, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AddTodoButton from '../Components/AddToDoButton';
 import HeaderMenu from '../Components/HeaderMenu';
 import { Context } from '../Context';
 import { TodoContext } from '../TodoContext';
+import { FAB } from 'react-native-paper';
 
-const HomePage = ({ route }) => {
+const HomePage = ({ navigation }) => {
 
     const [context, setContext] = useContext(Context);
     const [data, setData] = useState('');
@@ -16,8 +15,6 @@ const HomePage = ({ route }) => {
     useEffect(() => {
         setData( [...todocontext, ...data]);
     }, [todocontext]);
-        
-    console.log("Task", data);
 
     const Item = ({ title, date }) => (
         <View style={styles.item}>
@@ -44,7 +41,12 @@ const HomePage = ({ route }) => {
                     keyExtractor={item => item.id}
                 />
             </ScrollView>
-            <AddTodoButton />
+            <FAB
+                style={styles.fab}
+                icon='plus'
+                medium
+                onPress={() => navigation.navigate('AddTodoItem')}
+            />
         </SafeAreaView>
     )
 }
@@ -67,7 +69,14 @@ const styles = StyleSheet.create({
     datebox: {
         flexDirection: 'row',
         alignItems: 'center'
-    }
+    },
+    fab: {
+        position: 'absolute',
+        margin: 16,
+        right: 0,
+        bottom: 0,
+        backgroundColor: '#A6290F',
+    },
 })
 
 export default HomePage;
