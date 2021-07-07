@@ -21,11 +21,6 @@ const AuthScreen = () => {
         component={LogIn}
       />
 
-      <Auth.Screen
-        name="AddTodoItem"
-        component={AddTodoItem}
-      />
-
     </Auth.Navigator>
   )
 }

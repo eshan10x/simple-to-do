@@ -43,6 +43,16 @@ const LogIn = ({ navigation }) => {
     //     auth().signOut().then(() => console.log('User signed out!'));
     // }
 
+    const signOut = async () => {
+        try {
+          await GoogleSignin.revokeAccess();
+          await GoogleSignin.signOut();
+          this.setUser({ id: null }); // Remember to remove the user from your app's state as well
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
 
 
     // Handle user state changes

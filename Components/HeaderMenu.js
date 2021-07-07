@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         backgroundColor: '#A6290F',
-        height: '8%',
+        height: '9%',
         justifyContent: 'center'
     },
     titleBox: {

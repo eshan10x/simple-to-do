@@ -57,12 +57,21 @@ const Tabs = ({ navigation }) => {
                 component={AddTodoItem}
                 options={{
                     tabBarLabel: 'AddToDo',
-                    
+
                 }}
             />
 
-
-
+            <Tab.Screen
+                name="LogIn"
+                component={LogIn}
+                options={{
+                    tabBarLabel: 'Logout',
+                    tabBarVisible: false,
+                    tabBarIcon: ({ color }) => (
+                        <Icon name="sign-out" color={color} size={20}></Icon>
+                    )
+                }}
+            />
 
 
         </Tab.Navigator>
