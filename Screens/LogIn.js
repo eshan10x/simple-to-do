@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { SafeAreaView, Text, View, StyleSheet, Button } from 'react-native';
 import HomePage from './HomePage';
 import auth from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { Context } from '../Context';
 
 GoogleSignin.configure({
@@ -79,14 +79,9 @@ const LogIn = ({ navigation }) => {
                         <Button title="LogIn with Facebook" />
                     </View>
                     <View style={{ padding: 5 }}>
-                        {/* <GoogleSigninButton
-                            style={{ height: 48 }}
+                        <GoogleSigninButton
                             size={GoogleSigninButton.Size.Wide}
                             color={GoogleSigninButton.Color.Dark}
-                            onPress={() => _signIn()}
-                        /> */}
-                        <Button
-                            title="LogIn with Google"
                             onPress={() => onGoogleButtonPress()}
                         />
                         {/* <Button title="LogIn with Google" onPress={() => onGoogleButtonPress().then(() =>  signIn({ user, initializing }))}></Button> */}
