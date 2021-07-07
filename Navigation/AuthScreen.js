@@ -26,11 +26,6 @@ const AuthScreen = () => {
         component={AddTodoItem}
       />
 
-      <Auth.Screen
-        name="HeaderMenu"
-        component={HeaderMenu}
-      />
-
     </Auth.Navigator>
   )
 }

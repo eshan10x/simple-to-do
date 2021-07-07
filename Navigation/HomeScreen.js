@@ -24,11 +24,6 @@ function HomeScreen() {
         component={AddTodoItem}
       />
 
-      <Stack.Screen
-        name="HeaderMenu"
-        component={HeaderMenu}
-      />
-
     </Stack.Navigator>
 
   )

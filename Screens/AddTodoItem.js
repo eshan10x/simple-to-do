@@ -1,18 +1,17 @@
 //import liraries
-import { NavigationHelpersContext } from '@react-navigation/core';
 import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import HeaderMenu from '../Components/HeaderMenu';
 import { Context } from '../Context';
-import TodoContext from '../TodoContext';
+import { TodoContext } from '../TodoContext';
 
 
 // create a component
 const AddTodoItem = ({ navigation, props }) => {
 
     const [context, setContext] = useContext(Context);
-    // const [todocontext, setTodoContext] = useContext(TodoContext);
+    const [todocontext, setTodoContext] = useContext(TodoContext);
 
     const [value, setValue] = useState({
         title: '',
@@ -26,20 +25,19 @@ const AddTodoItem = ({ navigation, props }) => {
             assignee: '',
             dueDate: ''
         })
-        console.log("Task",value);
-        // dispatchUserEvent("todoItem",value);
+        dispatchUserEvent("todoItem",value);
         navigation.navigate("HomePage");
     }
 
-    // const dispatchUserEvent = (actionType, payload) => {
-    //     switch (actionType) {
-    //         case 'todoItem':
-    //             setTodoContext(payload);
-    //             return;
-    //         default:
-    //             return;
-    //     }
-    // };
+    const dispatchUserEvent = (actionType, payload) => {
+        switch (actionType) {
+            case 'todoItem':
+                setTodoContext(payload);
+                return;
+            default:
+                return;
+        }
+    };
 
 
     return (
@@ -63,7 +61,7 @@ const AddTodoItem = ({ navigation, props }) => {
                 />
 
                 <Text style={{ fontWeight: 'bold', fontSize: 20, marginTop: 20 }}>Due Date</Text>
-                <TextInput style={{ height: 50 }} placeholder="DD/MM/YYYY" keyboardType="numeric"
+                <TextInput style={{ height: 50 }} placeholder="DD/MM/YYYY"
                     onChangeText={
                         (text) => setValue({ ...value, dueDate: text })
                     }
