@@ -13,15 +13,15 @@ const HomePage = ({ navigation }) => {
     const [todocontext, setTodoContext] = useContext(TodoContext);
 
     useEffect(() => {
-        setData( [...todocontext, ...data]);
+        setData([...todocontext, ...data]);
     }, [todocontext]);
 
     const Item = ({ title, date }) => (
         <View style={styles.item}>
             <Text style={styles.title}>{title}</Text>
             <View style={styles.datebox}>
-                <Icon name='calendar'/>
-                <Text style={{marginLeft: 5}}>{date}</Text>
+                <Icon name='calendar' />
+                <Text style={{ marginLeft: 5 }}>{date}</Text>
             </View>
         </View>
     );
@@ -34,13 +34,13 @@ const HomePage = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HeaderMenu props={context} />
-            <ScrollView>
+            <SafeAreaView >
                 <FlatList
                     data={data}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
-            </ScrollView>
+            </SafeAreaView>
             <FAB
                 style={styles.fab}
                 icon='plus'
